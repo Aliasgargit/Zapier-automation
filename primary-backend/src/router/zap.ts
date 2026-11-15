@@ -87,6 +87,11 @@ router.get("/:zapId", authMiddleware, async (req, res) => {
     //@ts-ignore
     const id = req.id;
     const zapId = req.params.zapId;
+    if (typeof zapId !== "string") {
+        return res.status(400).json({
+            message: "Invalid zap id"
+        });
+    }
 
     const zap = await prismaClient.zap.findFirst({
         where: {

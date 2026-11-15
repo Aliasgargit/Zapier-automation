@@ -27,7 +27,6 @@
     /* Modules */
     "module": "commonjs",                                /* Specify what module code is generated. */
     "moduleResolution": "node",                          /* Keep PrismaClient visible to TypeScript. */
-    "ignoreDeprecations": "6.0",
     "baseUrl": ".",
     "paths": {
       "@prisma/client": ["node_modules/.prisma/client"]

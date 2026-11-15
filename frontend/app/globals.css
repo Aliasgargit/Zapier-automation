@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand: #ff4f00;
+  --brand-deep: #d93d00;
+  --ink: #1a1410;
+  --muted: #5c534c;
+  --surface: #fff8f3;
+  --surface-2: #ffe8d9;
+  --line: #ead9cc;
+  --glow: rgba(255, 79, 0, 0.22);
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 600px at 80% -10%, var(--glow), transparent 55%),
+    radial-gradient(900px 500px at 10% 0%, rgba(255, 180, 120, 0.35), transparent 50%),
+    linear-gradient(180deg, var(--surface) 0%, #fff 45%, var(--surface-2) 100%);
+  background-attachment: fixed;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .brand-mark {
+    letter-spacing: -0.04em;
+  }
+
+  .hero-rise {
+    animation: rise 0.8s ease-out both;
+  }
+
+  .hero-rise-delay {
+    animation: rise 0.9s ease-out 0.12s both;
+  }
+
+  .hero-rise-delay-2 {
+    animation: rise 1s ease-out 0.24s both;
+  }
+
+  .feature-pop {
+    animation: rise 0.9s ease-out 0.36s both;
+  }
+
+  .video-frame {
+    animation: float-in 1.1s ease-out 0.3s both;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-in {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsc -b && node dist/index.js",
-    "postinstall": "prisma generate"
+    "dev": "tsc && node dist/index.js",
+    "postinstall": "prisma generate",
+    "db:seed": "npx tsx prisma/seed.ts"
+  },
+  "prisma": {
+    "seed": "npx tsx prisma/seed.ts"
   },
   "keywords": [],
   "author": "",
@@ -13,12 +17,16 @@
   "devDependencies": {
     "@types/cors": "^2.8.19",
     "@types/jsonwebtoken": "^9.0.10",
-    "prisma": "^6.19.3"
+    "prisma": "^6.19.3",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",
     "@types/express": "^5.0.6",
     "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
     "jsonwebtoken": "^9.0.3",
     "zod": "^4.6.7"
   }
